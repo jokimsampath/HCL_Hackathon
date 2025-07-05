@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="login-card">
+        <div class="logo">
+            <img src="assets/logo.jpg" width="120" height="auto" alt="Company_Logo">
+        </div>
+        <h1>Login</h1>
+        <form [formGroup]="patientRegisterForm" (ngSubmit)="onSubmit()">
+            <input formControlName="name" placeholder="name" />
+            <div *ngIf="patientRegisterForm.get('name')?.invalid && patientRegisterForm.get('name')?.touched">
+                name is required (min 3 chars).
+            </div>
+            <input formControlName="email" placeholder="Email" />
+            <div *ngIf="patientRegisterForm.get('email')?.invalid && patientRegisterForm.get('email')?.touched">
+                Enter a valid email.
+            </div>
+            <input formControlName="phone" placeholder="phone" />
+            <div *ngIf="patientRegisterForm.get('phone')?.invalid && patientRegisterForm.get('phone')?.touched">
+                name is required (min 3 chars).
+            </div>
+            <input formControlName="dob" placeholder="dob" />
+            <div *ngIf="patientRegisterForm.get('dob')?.invalid && patientRegisterForm.get('dob')?.touched">
+                name is required (min 3 chars).
+            </div>
+
+            <button type="submit" class="btn btn-primary"  [disabled]="patientRegisterForm.invalid">Register</button>
+        </form>
+        <div class="links">
+            <a href="#">Forgot Password?</a>
+            <br><br>
+            <a href="#">New User? Register here</a>
+        </div>
+    </div>
+
+</div>
